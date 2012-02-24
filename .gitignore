@@ -1,0 +1,17 @@
+vendor/bundle
+db/*.sqlite3
+log/*.log
+tmp/**/*
+.bundle
+*~
+.DS_Store
+public/stylesheets/*.css
+coverage/
+public/upload/*
+.autotest
+spec/reports
+spec/fixtures
+*.swp
+\#*\#
+tmp
+config/database.yml
