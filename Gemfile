@@ -10,6 +10,11 @@ gem 'sqlite3'
 gem 'haml'
 gem 'haml-rails'
 gem "twitter-bootstrap-rails", "~> 2.0.1.0"
+gem 'oauth2'
+
+unless ENV['UNUSE_PG']
+  gem 'pg'
+end
 
 unless ENV['UNUSE_PG']
   gem 'pg'
