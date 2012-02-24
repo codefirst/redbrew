@@ -7,10 +7,13 @@ gem 'rails', '3.2.1'
 
 gem 'json'
 gem 'sqlite3'
-gem 'pg'
 gem 'haml'
 gem 'haml-rails'
 gem "twitter-bootstrap-rails", "~> 2.0.1.0"
+
+unless ENV['UNUSE_PG']
+  gem 'pg'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
