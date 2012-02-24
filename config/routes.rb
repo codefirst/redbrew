@@ -1,4 +1,6 @@
 Redbrew::Application.routes.draw do
+  resources :plugins
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @plugin.name
+%p
+  %b Url:
+  = @plugin.url
+%p
+  %b Desription:
+  = @plugin.desription
+%p
+  %b Formula:
+  = @plugin.formula
+%p
+  %b User:
+  = @plugin.user_id
+
+= link_to 'Edit', edit_plugin_path(@plugin)
+\|
+= link_to 'Back', plugins_path

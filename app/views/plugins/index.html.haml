@@ -1,0 +1,27 @@
+%h1 Listing plugins
+
+%table
+  %tr
+    %th Name
+    %th Url
+    %th Desription
+    %th Formula
+    %th User
+    %th
+    %th
+    %th
+
+  - @plugins.each do |plugin|
+    %tr
+      %td= plugin.name
+      %td= plugin.url
+      %td= plugin.desription
+      %td= plugin.formula
+      %td= plugin.user_id
+      %td= link_to 'Show', plugin
+      %td= link_to 'Edit', edit_plugin_path(plugin)
+      %td= link_to 'Destroy', plugin, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Plugin', new_plugin_path
