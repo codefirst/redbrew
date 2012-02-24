@@ -7,6 +7,7 @@ gem 'rails', '3.2.1'
 
 gem 'json'
 gem 'sqlite3'
+gem 'pg'
 gem 'haml'
 gem 'haml-rails'
 gem "twitter-bootstrap-rails", "~> 2.0.1.0"

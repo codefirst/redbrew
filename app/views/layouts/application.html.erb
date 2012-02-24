@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Redbrew</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
-</html>
+!!!
+%html
+ %head
+  %meta{'http-equiv'=>'content', :content=>'text/thml; charset=utf-8'}
+  = stylesheet_link_tag 'application'
+  = javascript_include_tag "application"
+  = csrf_meta_tags
+  %title Redbrew
+ %body
+  = yield
