@@ -14,7 +14,7 @@
   = @plugin.formula
 %p
   %b User:
-  = @plugin.user_id
+  = @plugin.user.name unless @plugin.user.nil?
 
 = link_to 'Edit', edit_plugin_path(@plugin)
 \|
