@@ -12,7 +12,11 @@
     #title Redbrew
     #navi
      %ul
-      %li= link_to('login', :controller => 'login', :action => 'oauth')
+      %li
+       - if login?
+        = link_to('logout', :controller => 'login', :action => 'logout')
+       - else
+        = link_to('login', :controller => 'login', :action => 'oauth')
    #content
     = yield
 

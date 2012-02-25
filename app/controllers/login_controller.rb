@@ -14,7 +14,13 @@ class LoginController < ApplicationController
 
   def oauth_callback
     code = params[:code]
-    token = client.auth_code.get_token(code, :redirect_uri => session[:oauth_referer])
+    begin
+      token = client.auth_code.get_token(code, :redirect_uri => session[:oauth_referer])
+    rescue => e
+      raise e
+      flash[:notice] = e.code
+      redirecgt_to :controller => 'plugin'
+    end
     oauth_user = JSON.parse(token.get('https://api.github.com/user').body)
     user = User.first(:conditions => {:github_name => oauth_user['login']})
     user ||= User.new
@@ -23,6 +29,7 @@ class LoginController < ApplicationController
     user.icon_url = oauth_user['avatar_url']
     user.save
     
+    session[:current_user] = user
     session.delete :oauth_referer
 
     referer = session[:oauth_referer]
@@ -32,10 +39,7 @@ class LoginController < ApplicationController
   end
 
   def logout
-    if request.post?
-      session.delete :cached_current_user
-      session.delete :current_user_id
-    end
+    session.delete :current_user
     redirect_to request.referer
   end
 

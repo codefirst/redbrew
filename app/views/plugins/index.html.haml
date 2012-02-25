@@ -1,8 +1,7 @@
-
-.right
-  = button_to('New Plugin', new_plugin_path)
-
-.clearfix
+- unless login?
+  .right
+    = button_to('New Plugin', new_plugin_path)
+  .clearfix
 
 %table
   %tr
