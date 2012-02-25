@@ -4,7 +4,7 @@
   %tr
     %th Name
     %th Github name
-    %th Icon url
+    %th Icon
     %th
     %th
     %th
@@ -13,7 +13,8 @@
     %tr
       %td= user.name
       %td= user.github_name
-      %td= user.icon_url
+      %td
+        %img{:src => user.icon_url}
       %td= link_to 'Show', user
       %td= link_to 'Edit', edit_user_path(user)
       %td= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete
