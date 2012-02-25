@@ -8,9 +8,13 @@
   %title Redbrew
  %body
   #wrap.clearfix
-   .title Redbrew
-   .subtitle Sharing Recipes of Redmine plugin installation.
-   = yield
+   #header.clearfix
+    #title Redbrew
+    #navi
+     %ul
+      %li= link_to('login', :controller => 'login', :action => 'oauth')
+   #content
+    = yield
 
   .footer
    Copyright (C) 2012- codefirst.org 
