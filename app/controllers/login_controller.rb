@@ -8,9 +8,7 @@ class LoginController < ApplicationController
 
   def oauth
     session[:oauth_referer] = request.referer
-
     callback_url = url_for(:controller => 'login', :action => 'oauth_callback')
-    logger.info callback_url
     redirect_to client.auth_code.authorize_url(:redirect_uri => callback_url)
   end
 
