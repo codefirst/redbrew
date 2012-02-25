@@ -8,14 +8,12 @@
   %tr
     %th Name
     %th Desription
-    %th User
     %th
 
   - @plugins.each do |plugin|
     %tr
       %td= link_to plugin.name, plugin.url
       %td= plugin.desription
-      %td= plugin.user.name
       %td
         %ul.button-bar
           %li.first
@@ -23,4 +21,4 @@
           %li
             = link_to 'Edit', edit_plugin_path(plugin)
           %li.last
-            = link_to 'Destroy', plugin, :confirm => 'Are you sure?', :method => :delete
+            = link_to 'Remove', plugin, :confirm => 'Are you sure?', :method => :delete
