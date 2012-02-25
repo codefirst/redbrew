@@ -11,13 +11,9 @@ describe LoginController do
 
   context "GET oauth" do
     before do
-      client = mock
-      auth_code = mock
       token = mock
       oauth_response = mock
-      controller.stub(:client).and_return(client)
-      client.stub(:auth_code).and_return(auth_code)
-      auth_code.stub(:get_token).and_return(token)
+      controller.stub_chain('client.auth_code.get_token').and_return(token)
       token.stub(:get).and_return(oauth_response)
       oauth_response.stub(:body).and_return('{"login":"user_id", "name":"user name", "avatar_url":"http://avator.url"}')
 
