@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(:version => 20120224155824) do
     t.string   "name"
     t.string   "url"
     t.string   "desription"
-    t.integer  "formula"
+    t.string   "formula"
     t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false

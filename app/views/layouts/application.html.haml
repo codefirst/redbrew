@@ -2,9 +2,18 @@
 %html
  %head
   %meta{'http-equiv'=>'content', :content=>'text/thml; charset=utf-8'}
+  = stylesheet_link_tag 'kickstart'
   = stylesheet_link_tag 'application'
+  = stylesheet_link_tag 'main'
   = javascript_include_tag "application"
   = csrf_meta_tags
   %title Redbrew
  %body
-  = yield
+  #wrap.clearfix
+   .title Redbrew
+   .subtitle Sharing Recipes of Redmine plugin installation.
+   = yield
+
+  .footer
+   Copyright (C) 2012- codefirst.org 
+   All rights reserved.

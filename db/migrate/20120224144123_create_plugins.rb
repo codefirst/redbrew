@@ -4,7 +4,7 @@ class CreatePlugins < ActiveRecord::Migration
       t.string :name
       t.string :url
       t.string :desription
-      t.integer :formula
+      t.string :formula
       t.integer :user_id
 
       t.timestamps
