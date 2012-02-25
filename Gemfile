@@ -10,6 +10,7 @@ gem 'sqlite3'
 gem 'haml'
 gem 'haml-rails'
 gem 'oauth2'
+gem 'ci_reporter'
 
 unless ENV['UNUSE_PG']
   gem 'pg'
@@ -30,7 +31,6 @@ end
 group :development, :test do
   gem "rspec-rails", ">= 2.3.0"
   gem 'rcov'
-  gem 'ci_reporter'
   gem 'spork'
   gem 'rb-fsevent'
   gem 'guard-spork'
