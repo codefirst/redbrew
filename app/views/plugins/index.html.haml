@@ -15,9 +15,13 @@
       %td= plugin.desription
       %td
         %ul.button-bar
-          %li.first
-            = link_to 'Show', plugin
-          %li
-            = link_to 'Edit', edit_plugin_path(plugin)
-          %li.last
-            = link_to 'Remove', plugin, :confirm => 'Are you sure?', :method => :delete
+          - if login?
+            %li.first
+              = link_to 'Detail', plugin
+            %li
+              = link_to 'Edit', edit_plugin_path(plugin)
+            %li.last
+              = link_to 'Remove', plugin, :confirm => 'Are you sure?', :method => :delete
+          - else
+            %li.first.last
+              = link_to 'Detail', plugin
