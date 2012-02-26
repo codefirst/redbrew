@@ -7,9 +7,7 @@
   %b Github name:
   = @user.github_name
 %p
-  %b Icon url:
-  = @user.icon_url
+  %b Icon:
+  %img{:src => @user.icon_url}
 
-= link_to 'Edit', edit_user_path(@user)
-\|
 = link_to 'Back', users_path

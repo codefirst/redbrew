@@ -6,8 +6,6 @@
     %th Github name
     %th Icon
     %th
-    %th
-    %th
 
   - @users.each do |user|
     %tr
@@ -15,8 +13,7 @@
       %td= user.github_name
       %td
         %img{:src => user.icon_url}
-      %td= link_to 'Show', user
-      %td= link_to 'Edit', edit_user_path(user)
-      %td= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete
-
-
+      %td
+        %ul.button-bar
+          %li.first.last
+            = link_to 'Detail', user
