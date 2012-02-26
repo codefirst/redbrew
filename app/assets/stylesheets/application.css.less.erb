@@ -13,6 +13,9 @@
 
 body {
   background: #eee;
+  background-image: url(<%= asset_data_uri 'strip.png' %>);
+  background-repeat: repeat;
+  background-attachment: fixed;
 }
 
 #wrap {
@@ -21,6 +24,7 @@ body {
   margin: 30px auto 30px auto;
   border: 1px solid #ccc;
   -webkit-box-shadow: 1px 1px 2px #999;
+  border-radius: 10px;
 }
 
 #header {
@@ -31,6 +35,7 @@ body {
   background: #fafafa;
   background-image: -webkit-linear-gradient(#FAFAFA,#EAEAEA);
   -webkit-box-shadow: 1px 1px 2px #eee;
+  border-radius: 10px 10px 0 0;
 }
 
 #content {
