@@ -9,6 +9,7 @@
  *= require prettify
  *= require chosen
  *= require tiptip
+ *= require codemirror
  */
 
 body {
@@ -44,10 +45,20 @@ body {
   padding: 20px;
 }
 
-
 .footer {
   text-align: center;
   color: #999;
+}
+
+.CodeMirror pre {
+  border: none;
+  box-shadow: none;
+}
+.CodeMirror-scroll {
+  border: 1px solid #ddd;
+  height: 250px;
+  overflow-y: auto;
+  overflow-x: auto;
 }
 
 #title {

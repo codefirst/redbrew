@@ -1,5 +1,14 @@
-%h1 New plugin
+%h4 New plugin
 
 = render 'form'
 
 = link_to 'Back', plugins_path
+
+:javascript
+  var editor = CodeMirror.fromTextArea(document.getElementById("plugin_formula"), {
+    mode: "text/x-ruby",
+    tabMode: "indent",
+    matchBrackets: true,
+    indentUnit: 4,
+    lineNumbers: true
+  });

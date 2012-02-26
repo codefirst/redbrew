@@ -1,7 +1,16 @@
-%h1 Editing plugin
+%h4 Editing plugin
 
 = render 'form'
 
 = link_to 'Show', @plugin
 \|
 = link_to 'Back', plugins_path
+
+:javascript
+  var editor = CodeMirror.fromTextArea(document.getElementById("plugin_formula"), {
+    mode: "text/x-ruby",
+    tabMode: "indent",
+    matchBrackets: true,
+    indentUnit: 4,
+    lineNumbers: true
+  });
