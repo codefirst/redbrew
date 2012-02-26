@@ -4,13 +4,14 @@
   %meta{'http-equiv'=>'content', :content=>'text/thml; charset=utf-8'}
   = stylesheet_link_tag 'application'
   = javascript_include_tag 'application'
+  = favicon_link_tag 'favicon.ico'
   = csrf_meta_tags
   %title Redbrew
  %body
   #wrap.clearfix
    #header.clearfix
     #title
-     = link_to 'Redbrew', root_path
+     = link_to image_tag("logo.png", :title => "Redbrew"), root_path
     #navi
      %ul
       %li
@@ -22,5 +23,5 @@
     = yield
 
   .footer
-   Copyright (C) 2012- codefirst.org 
+   Copyright (C) 2012- codefirst.org
    All rights reserved.
