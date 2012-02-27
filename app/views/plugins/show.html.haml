@@ -1,24 +1,36 @@
 %p#notice= notice
 
-%p
-  %b Name:
-  = @plugin.name
-%p
-  %b Url:
-  = @plugin.url
-%p
-  %b Desription:
-  = @plugin.desription
-%p
-  %b Formula:
-  = @plugin.formula
-%p
-  %b User:
-  = @plugin.user.name unless @plugin.user.nil?
+%table
+  %tr
+    %td.label Name:
+    %td= @plugin.name
+  %tr
+    %td.label Url:
+    %td= link_to @plugin.url, @plugin.url
+  %tr
+    %td.label Desription:
+    %td= @plugin.desription
+  %tr
+    %td.label Formula:
+    %td= text_area_tag 'plugin_formula', @plugin.formula
+  %tr
+    %td.label User:
+    %td= @plugin.user.name unless @plugin.user.nil?
 
-= link_to 'Edit', edit_plugin_path(@plugin)
-\|
-= link_to 'Back', plugins_path
+.left-buttons
+  = link_to 'Edit', edit_plugin_path(@plugin)
+  \|
+  = link_to 'Back', plugins_path
 
-.right
-  = button_to 'Remove', @plugin, :confirm => 'Are you sure?', :method => :delete
+.right-buttons
+  = link_to 'Remove', @plugin, :confirm => 'Are you sure?', :method => :delete
+
+:javascript
+  var editor = CodeMirror.fromTextArea(document.getElementById("plugin_formula"), {
+    mode: "text/x-ruby",
+    tabMode: "indent",
+    matchBrackets: true,
+    indentUnit: 4,
+    lineNumbers: true,
+    readOnly : true
+  });

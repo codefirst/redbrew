@@ -2,12 +2,12 @@
 
 = render 'form'
 
-= link_to 'Show', @plugin
-\|
-= link_to 'Back', plugins_path
-
-.right
-  = button_to 'Remove', @plugin, :confirm => 'Are you sure?', :method => :delete
+.left-buttons
+  = link_to 'Show', @plugin
+  \|
+  = link_to 'Back', plugins_path
+.right-buttons
+  = link_to 'Remove', @plugin, :confirm => 'Are you sure?', :method => :delete
 
 :javascript
   var editor = CodeMirror.fromTextArea(document.getElementById("plugin_formula"), {
