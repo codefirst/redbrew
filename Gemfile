@@ -11,6 +11,7 @@ gem 'haml'
 gem 'haml-rails'
 gem 'oauth2'
 gem 'ci_reporter'
+gem 'jquery-rails'
 
 unless ENV['UNUSE_PG']
   gem 'pg'
@@ -21,7 +22,6 @@ end
 group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'less-rails'
-
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer'
 

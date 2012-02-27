@@ -2603,6 +2603,6 @@ body{background:#eee;background-image:url(data:image/png;base64,iVBORw0KGgoAAAAN
 #title{float:left;font-size:2.5em;color:#555;}#title a{color:#555;text-decoration:none;}
 #navi{float:right;font-size:1.2em;margin:10px;}
 #navi ul{list-style:none;}
-td.label{width:20px;text-align:right;}
+td.label{width:20px;}
 .left-buttons{float:left;}
 .right-buttons{float:right;}
