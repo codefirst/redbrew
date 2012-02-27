@@ -18,10 +18,8 @@
           - if login?
             %li.first
               = link_to 'Detail', plugin
-            %li
-              = link_to 'Edit', edit_plugin_path(plugin)
             %li.last
-              = link_to 'Remove', plugin, :confirm => 'Are you sure?', :method => :delete
+              = link_to 'Edit', edit_plugin_path(plugin)
           - else
             %li.first.last
               = link_to 'Detail', plugin

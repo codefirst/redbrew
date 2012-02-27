@@ -6,6 +6,9 @@
 \|
 = link_to 'Back', plugins_path
 
+.right
+  = button_to 'Remove', @plugin, :confirm => 'Are you sure?', :method => :delete
+
 :javascript
   var editor = CodeMirror.fromTextArea(document.getElementById("plugin_formula"), {
     mode: "text/x-ruby",
