@@ -40,7 +40,7 @@ class LoginController < ApplicationController
 
   def logout
     session.delete :current_user
-    redirect_to request.referer
+    redirect_to :controller => 'plugins'
   end
 
   private
