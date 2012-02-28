@@ -22,12 +22,16 @@
     %td= @plugin.update_user.name unless @plugin.update_user.nil?
 
 .left-buttons
-  = link_to 'Edit', edit_plugin_path(@plugin)
-  \|
-  = link_to 'Back', plugins_path
+  - if login?
+    = link_to 'Edit', edit_plugin_path(@plugin)
+    \|
+    = link_to 'Back', plugins_path
+  - else
+    = link_to 'Back', plugins_path
 
-.right-buttons
-  = link_to 'Remove', @plugin, :confirm => 'Are you sure?', :method => :delete
+- if login? 
+  .right-buttons
+    = link_to 'Remove', @plugin, :confirm => 'Are you sure?', :method => :delete
 
 :javascript
   var editor = CodeMirror.fromTextArea(document.getElementById("plugin_formula"), {
