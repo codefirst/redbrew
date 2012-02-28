@@ -15,8 +15,11 @@
     %td.label Formula:
     %td= text_area_tag 'plugin_formula', @plugin.formula
   %tr
-    %td.label User:
-    %td= @plugin.user.name unless @plugin.user.nil?
+    %td.label Created:
+    %td= @plugin.create_user.name unless @plugin.create_user.nil?
+  %tr
+    %td.label Updated:
+    %td= @plugin.update_user.name unless @plugin.update_user.nil?
 
 .left-buttons
   = link_to 'Edit', edit_plugin_path(@plugin)

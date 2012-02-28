@@ -10,24 +10,6 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120224155824) do
-
-  create_table "plugins", :force => true do |t|
-    t.string   "name"
-    t.string   "url"
-    t.string   "desription"
-    t.string   "formula"
-    t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "users", :force => true do |t|
-    t.string   "name"
-    t.string   "github_name"
-    t.string   "icon_url"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
+ActiveRecord::Schema.define(:version => 0) do
 
 end

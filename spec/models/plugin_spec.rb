@@ -13,10 +13,12 @@ describe Plugin do
       :name => 'test user',
       :github_name => 'test',
       :icon_url => 'http://example.com/icon.png')
-    @plugin.user = @user
+    @plugin.create_user = @user
+    @plugin.update_user = @user
   end
 
   subject { @plugin }
 
-  its(:user) { should == @user }
+  its(:create_user) { should == @user }
+  its(:update_user) { should == @user }
 end

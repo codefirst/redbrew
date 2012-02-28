@@ -41,7 +41,8 @@ class PluginsController < ApplicationController
   # POST /plugins.json
   def create
     @plugin = Plugin.new(params[:plugin])
-    @plugin.user = current_user
+    @plugin.create_user = current_user
+    @plugin.update_user = current_user
     respond_to do |format|
       if @plugin.save
         format.html { redirect_to @plugin, :notice => 'Plugin was successfully created.' }
@@ -57,7 +58,7 @@ class PluginsController < ApplicationController
   # PUT /plugins/1.json
   def update
     @plugin = Plugin.find(params[:id])
-    @plugin.user = current_user
+    @plugin.update_user = current_user
     respond_to do |format|
       if @plugin.update_attributes(params[:plugin])
         format.html { redirect_to @plugin, :notice => 'Plugin was successfully updated.' }
