@@ -12,15 +12,5 @@
 
   - @plugins.each do |plugin|
     %tr
-      %td= link_to plugin.name, plugin.url
+      %td= link_to plugin.name, :action => 'show', :id => plugin
       %td= plugin.desription
-      %td
-        %ul.button-bar
-          - if login?
-            %li.first
-              = link_to 'Detail', plugin
-            %li.last
-              = link_to 'Edit', edit_plugin_path(plugin)
-          - else
-            %li.first.last
-              = link_to 'Detail', plugin
