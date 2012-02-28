@@ -24,7 +24,7 @@ describe PluginsController do
   # Plugin. As you add validations to Plugin, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    {}
+    {:name => 'test'}
   end
   
   # This should return the minimal set of values that should be in the session

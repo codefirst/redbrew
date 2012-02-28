@@ -48,4 +48,16 @@ describe Plugin do
 
     it { should == @test_plugin }
   end
+
+  context 'empty name plugin' do
+    before do
+      @plugin = Plugin.new(:name => '')
+    end
+
+    it 'cannot be saved' do
+      lambda {
+        @plugin.save!
+      }.should raise_error
+    end
+  end
 end
