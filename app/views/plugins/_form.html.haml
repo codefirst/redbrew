@@ -1,7 +1,7 @@
 = form_for @plugin do |f|
   -if @plugin.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@plugin.errors.count, "error")} prohibited this plugin from being saved:"
+    .notice.error
+      = "#{pluralize(@plugin.errors.count, "error")} prohibited this plugin from being saved:"
       %ul
         - @plugin.errors.full_messages.each do |msg|
           %li= msg
