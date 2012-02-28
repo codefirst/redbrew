@@ -2,8 +2,8 @@ class PluginsController < ApplicationController
   # GET /plugins
   # GET /plugins.json
   def index
-    @plugins = Plugin.all
-
+    # @plugins = Plugin.all
+    @plugins = Plugin.order(:name).page(params[:page]).per(50)
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @plugins }

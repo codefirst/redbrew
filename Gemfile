@@ -12,6 +12,7 @@ gem 'haml-rails'
 gem 'oauth2'
 gem 'ci_reporter'
 gem 'jquery-rails'
+gem 'kaminari'
 
 unless ENV['UNUSE_PG']
   gem 'pg'
