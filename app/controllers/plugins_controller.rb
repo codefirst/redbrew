@@ -40,6 +40,9 @@ class PluginsController < ApplicationController
   # POST /plugins
   # POST /plugins.json
   def create
+    unless login?
+      raise 'not allowed not-login users to create new plugins'
+    end
     @plugin = Plugin.new(params[:plugin])
     @plugin.create_user = current_user
     @plugin.update_user = current_user
@@ -57,6 +60,9 @@ class PluginsController < ApplicationController
   # PUT /plugins/1
   # PUT /plugins/1.json
   def update
+    unless login?
+      raise 'not allowed not-login users to update  plugins'
+    end
     @plugin = Plugin.find(params[:id])
     @plugin.update_user = current_user
     respond_to do |format|
@@ -73,6 +79,9 @@ class PluginsController < ApplicationController
   # DELETE /plugins/1
   # DELETE /plugins/1.json
   def destroy
+    unless login?
+      raise 'not allowed not-login users to delete plugins'
+    end
     @plugin = Plugin.find(params[:id])
     @plugin.destroy
 

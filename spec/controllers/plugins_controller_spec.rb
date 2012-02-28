@@ -31,7 +31,7 @@ describe PluginsController do
   # in order to pass any filters (e.g. authentication) defined in
   # PluginsController. Be sure to keep this updated too.
   def valid_session
-    {}
+    {:current_user => User.new}
   end
 
   describe "GET index" do
