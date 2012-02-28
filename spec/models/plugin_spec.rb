@@ -37,4 +37,15 @@ describe Plugin do
       }.should raise_error
     end
   end
+
+  context 'search by id' do
+    before do
+      Plugin.new(:name => 'test').save
+      @test_plugin = Plugin.find_by_name('test')
+    end
+
+    subject { Plugin.find('test') }
+
+    it { should == @test_plugin }
+  end
 end
