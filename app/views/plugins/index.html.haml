@@ -13,10 +13,10 @@
 %table
   %tr
     %th Name
-    %th Desription
+    %th Description
     %th
 
   - @plugins.each do |plugin|
     %tr
       %td= link_to plugin.name, :action => 'show', :id => plugin
-      %td= plugin.desription
+      %td= plugin.description

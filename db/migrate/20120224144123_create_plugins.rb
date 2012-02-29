@@ -3,7 +3,7 @@ class CreatePlugins < ActiveRecord::Migration
     create_table :plugins do |t|
       t.string :name
       t.string :url
-      t.string :desription
+      t.string :description
       t.string :formula
       t.integer :create_user_id
       t.integer :update_user_id

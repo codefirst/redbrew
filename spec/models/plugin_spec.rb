@@ -7,7 +7,7 @@ describe Plugin do
         :id => 1,
         :name => 'some plugin',
         :url => 'http://example.com/plugin/',
-        :desription => 'a plugin for redmine',
+        :description => 'a plugin for redmine',
         :formula => 'script')
       @user = User.new(
         :id => 1,
