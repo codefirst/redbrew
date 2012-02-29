@@ -13,6 +13,7 @@ gem 'oauth2'
 gem 'ci_reporter'
 gem 'jquery-rails'
 gem 'kaminari'
+gem 'rails3_acts_as_paranoid', :git => 'git://github.com/comboy/rails3_acts_as_paranoid.git'
 
 unless ENV['UNUSE_PG']
   gem 'pg'

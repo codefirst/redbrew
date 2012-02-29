@@ -7,7 +7,7 @@ class CreatePlugins < ActiveRecord::Migration
       t.string :formula
       t.integer :create_user_id
       t.integer :update_user_id
-
+      t.timestamp :deleted_at
       t.timestamps
     end
   end

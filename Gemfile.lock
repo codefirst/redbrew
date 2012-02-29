@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/comboy/rails3_acts_as_paranoid.git
+  revision: 42d3ac5891590877e24a67d1ab33095f6d591c4f
+  specs:
+    rails3_acts_as_paranoid (0.1.1)
+      activerecord (~> 3.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -170,6 +177,7 @@ DEPENDENCIES
   oauth2
   pg
   rails (= 3.2.1)
+  rails3_acts_as_paranoid!
   rb-fsevent
   rcov
   rspec-rails (>= 2.3.0)
