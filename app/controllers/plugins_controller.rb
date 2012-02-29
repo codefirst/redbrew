@@ -1,9 +1,12 @@
 class PluginsController < ApplicationController
+  include PluginsHelper
+
   # GET /plugins
   # GET /plugins.json
   def index
-    # @plugins = Plugin.all
-    @plugins = Plugin.order(:name).page(params[:page]).per(50)
+    @keywords = params[:q] || ''
+    search = Plugin.search :name_or_url_or_desription_or_formula_contains_all => (@keywords.split)
+    @plugins = search.order(:name).page(params[:page]).per(50)
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @plugins }

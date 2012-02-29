@@ -1,3 +1,9 @@
+#search-box
+  = form_tag({:action => 'index'}, {:method => 'get'}) do
+    search: 
+    = text_field_tag :q, @keywords
+
+
 - if login?
   .right
     = button_to('New Plugin', new_plugin_path)
