@@ -15,4 +15,15 @@ class Plugin < ActiveRecord::Base
       super
     end
   end
+
+  def self.search_by_keywords(keywords)
+    plugins = Arel::Table.new :plugins
+    conds = keywords.strip.split.map do |key|
+      [:url, :description, :formula].inject (plugins[:name].matches("%#{key}%")) do |condition, col|
+        condition.or(plugins[col].matches("%#{key}%"))
+      end
+    end
+
+    conds.inject (Plugin) {|query, cond| query.where(cond) }
+  end
 end

@@ -60,4 +60,10 @@ describe Plugin do
       }.should raise_error
     end
   end
+
+  context 'constract search condition' do
+    subject { Plugin.search_by_keywords(' aaa  bbb ') }
+
+    its(:to_sql) { should == "SELECT \"plugins\".* FROM \"plugins\"  WHERE (plugins.deleted_at IS NULL) AND ((((\"plugins\".\"name\" LIKE '%aaa%' OR \"plugins\".\"url\" LIKE '%aaa%') OR \"plugins\".\"description\" LIKE '%aaa%') OR \"plugins\".\"formula\" LIKE '%aaa%')) AND ((((\"plugins\".\"name\" LIKE '%bbb%' OR \"plugins\".\"url\" LIKE '%bbb%') OR \"plugins\".\"description\" LIKE '%bbb%') OR \"plugins\".\"formula\" LIKE '%bbb%'))" }
+  end
 end
