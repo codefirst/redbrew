@@ -16,10 +16,14 @@
     %td= text_area_tag 'plugin_formula', @plugin.formula
   %tr
     %td.label Created:
-    %td= @plugin.create_user.name unless @plugin.create_user.nil?
+    %td
+      - unless @plugin.create_user.nil?
+        %img{:src => @plugin.create_user.icon_url, :width => '24px'}= @plugin.create_user.name
   %tr
     %td.label Updated:
-    %td= @plugin.update_user.name unless @plugin.update_user.nil?
+    %td
+      - unless @plugin.update_user.nil?
+        %img{:src => @plugin.update_user.icon_url, :width => '24px'}= @plugin.update_user.name
 
 .left-buttons
   - if login?
