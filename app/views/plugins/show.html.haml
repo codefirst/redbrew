@@ -18,12 +18,16 @@
     %td.label Created:
     %td
       - unless @plugin.create_user.nil?
-        %img{:src => @plugin.create_user.icon_url, :width => '24px'}= @plugin.create_user.name
+        = link_to "https://github.com/#{@plugin.create_user.github_name}" do
+          = image_tag(@plugin.create_user.icon_url, :width => '24px')
+          = @plugin.create_user.name
   %tr
     %td.label Updated:
     %td
       - unless @plugin.update_user.nil?
-        %img{:src => @plugin.update_user.icon_url, :width => '24px'}= @plugin.update_user.name
+        = link_to "https://github.com/#{@plugin.update_user.github_name}" do
+          = image_tag(@plugin.update_user.icon_url, :width => '24px')
+          = @plugin.update_user.name
 
 .left-buttons
   - if login?
