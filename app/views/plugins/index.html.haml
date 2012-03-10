@@ -3,14 +3,12 @@
 - if login?
   .right
     = button_to('New Plugin', new_plugin_path)
-  .clearfix
 
 %table
   %tr
     %th Name
-    %th Updated:
+    %th Updated
     %th Description
-    %th
 
   - @plugins.each do |plugin|
     %tr
