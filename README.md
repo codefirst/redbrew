@@ -26,6 +26,12 @@ Start up rails server:
 
 Access to http://localhost:3000/ .
 
+How to test
+----------------
+
+    $ bundle exec rake db:migrate RAILS_ENV=test
+    $ bundle exec rake spec
+
 Authors
 ----------------
  * @suer

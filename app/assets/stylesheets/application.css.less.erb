@@ -24,7 +24,6 @@ body {
   background: #fff;
   margin: 30px auto 30px auto;
   border: 1px solid #ccc;
-  -webkit-box-shadow: 1px 1px 2px #999;
   border-radius: 10px;
 }
 
@@ -37,6 +36,35 @@ body {
   background-image: -webkit-linear-gradient(#FAFAFA,#EAEAEA);
   -webkit-box-shadow: 1px 1px 2px #eee;
   border-radius: 10px 10px 0 0;
+
+  #title {
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 680px;
+    float:left;
+
+    a {
+      color: #555;
+      text-decoration: none;
+    }
+
+    .copy {
+      color: #777;
+      font-size: 0.8em;
+      margin: 0;
+      padding-left: 10px;
+    }
+  }
+
+  #account {
+    width: 190px;
+    float: right;
+    text-align: right;
+    height: 40px;
+    padding-right: 30px;
+    padding-top: 20px;
+  }
+
 }
 
 #content {
@@ -48,6 +76,7 @@ body {
 .footer {
   text-align: center;
   color: #999;
+  font-size: 0.9em;
 }
 
 .CodeMirror pre {
@@ -61,27 +90,15 @@ body {
   overflow-x: auto;
 }
 
-#title {
-  float: left;
-  font-size: 2.5em;
-  color: #555;
-
-  a {
-    color: #555;
-    text-decoration: none;
+#search-box {
+  width: 340px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+  #q {
+    width: 260px;
   }
 }
-
-#navi {
-  float: right;
-  font-size: 1.2em;
-  margin: 10px;
-}
-
-#navi ul {
-  list-style: none;
-}
-
 td.label {
   width: 20px;
   text-align: right;

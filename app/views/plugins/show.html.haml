@@ -18,16 +18,12 @@
     %td.label Created:
     %td
       - unless @plugin.create_user.nil?
-        = link_to "https://github.com/#{@plugin.create_user.github_name}" do
-          = image_tag(@plugin.create_user.icon_url, :width => '24px')
-          = @plugin.create_user.name
+        = link_to_github @plugin.create_user
   %tr
     %td.label Updated:
     %td
       - unless @plugin.update_user.nil?
-        = link_to "https://github.com/#{@plugin.update_user.github_name}" do
-          = image_tag(@plugin.update_user.icon_url, :width => '24px')
-          = @plugin.update_user.name
+        = link_to_github @plugin.update_user
 
 .left-buttons
   - if login?
@@ -37,7 +33,7 @@
   - else
     = link_to 'Back', plugins_path
 
-- if login? 
+- if login?
   .right-buttons
     = link_to 'Remove', @plugin, :confirm => 'Are you sure?', :method => :delete
 

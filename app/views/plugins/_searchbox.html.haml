@@ -1,0 +1,5 @@
+#search-box
+  = form_tag({:action => 'index'}, {:method => 'get'}) do
+    = text_field_tag :q, keywords, {:placeholder => 'Search word', :autofocus => true}
+    %button.small.blue Search
+

@@ -6,19 +6,19 @@
   = javascript_include_tag 'application'
   = favicon_link_tag 'favicon.ico'
   = csrf_meta_tags
-  %title Redbrew
+  %title Redbrew | A missing plugin manager for Redmine
  %body
-  #wrap.clearfix
-   #header.clearfix
+  #wrap
+   #header
     #title
      = link_to image_tag("logo.png", :title => "Redbrew"), root_path
-    #navi
-     %ul
-      %li
-       - if login?
-        = link_to('logout', :controller => 'login', :action => 'logout')
-       - else
-        = link_to('login', :controller => 'login', :action => 'oauth')
+    #account
+     - if login?
+      = link_to_github current_user
+      = link_to('Logout', {:controller => 'login', :action => 'logout'}, { :class => 'button small green'})
+     - else
+      = link_to('Login with Github account', {:controller => 'login', :action => 'oauth'}, {:class => 'button small green'})
+
    #content
     = yield
 
