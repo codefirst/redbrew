@@ -2,22 +2,23 @@
   -if @plugin.errors.any?
     .notice.error
       = "#{pluralize(@plugin.errors.count, "error")} prohibited this plugin from being saved:"
-      %ul
+      %ul{:style => 'margin-bottom:0'}
         - @plugin.errors.full_messages.each do |msg|
           %li= msg
 
   %table
     %tr
       %td.label= f.label :name
-      %td= f.text_field :name
+      %td= f.text_field :name, {:size => 40}
     %tr
       %td.label= f.label :url
-      %td= f.text_field :url
+      %td= f.text_field :url, {:size => 100}
     %tr
       %td.label= f.label :description
-      %td= f.text_field :description
+      %td= f.text_field :description, {:size => 100}
     %tr
       %td.label= f.label :formula
       %td= f.text_area :formula
-  .actions
-    = f.submit 'Save'
+    %tr
+      %td.label{:style => 'border:none;'} &nbsp;
+      %td{:style => 'border:none;'}= f.submit 'Save'
