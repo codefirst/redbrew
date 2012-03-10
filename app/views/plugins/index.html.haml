@@ -9,10 +9,12 @@
 %table
   %tr
     %th Name
+    %th Updated:
     %th Description
     %th
 
   - @plugins.each do |plugin|
     %tr
       %td= link_to plugin.name, :action => 'show', :id => plugin
+      %td= distance_of_time_in_words_to_now(plugin.updated_at) + ' ago'
       %td= plugin.description

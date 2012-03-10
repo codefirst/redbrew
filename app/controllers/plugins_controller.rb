@@ -6,7 +6,7 @@ class PluginsController < ApplicationController
   def index
     @keywords = params[:q] || ''
     search = Plugin.search_by_keywords(@keywords)
-    @plugins = search.order(:name).page(params[:page]).per(50)
+    @plugins = search.order(:updated_at).page(params[:page]).per(10)
 
     respond_to do |format|
       format.html # index.html.erb
