@@ -11,5 +11,14 @@ require 'spec_helper'
 #   end
 # end
 describe UsersHelper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  context 'link_to_github' do
+    before do
+      session[:current_user] = User.new(:name => 'test user', :github_name => 'test')
+    end
+
+    context 'link_to_github' do
+      it { link_to_github(session[:current_user]).should == '<img alt="Images" src="/images/" width="16px" /><a href="https://github.com/test">test user</a>' }
+    end
+  end
+
 end
