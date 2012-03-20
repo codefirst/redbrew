@@ -19,6 +19,12 @@ class PluginsController < ApplicationController
   def show
     @plugin = Plugin.find(params[:id])
 
+    if params[:format] == 'json'
+      @plugin.downloads ||= 0
+      @plugin.downloads += 1
+      @plugin.save
+    end
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render :json => @plugin }

@@ -6,6 +6,9 @@
     %td.label Name:
     %td= @plugin.name
   %tr
+    %td.label Downloads:
+    %td= @plugin.downloads || 0
+  %tr
     %td.label Url:
     %td= link_to @plugin.url, @plugin.url
   %tr
