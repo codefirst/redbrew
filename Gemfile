@@ -32,7 +32,6 @@ end
 
 group :development, :test do
   gem "rspec-rails", ">= 2.3.0"
-  gem 'rcov'
   gem 'spork'
   gem 'rb-fsevent'
   gem 'guard-spork'

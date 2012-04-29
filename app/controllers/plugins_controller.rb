@@ -22,7 +22,9 @@ class PluginsController < ApplicationController
     if params[:format] == 'json'
       @plugin.downloads ||= 0
       @plugin.downloads += 1
+      Plugin.record_timestamps = false
       @plugin.save
+      Plugin.record_timestamps = true
     end
 
     respond_to do |format|
