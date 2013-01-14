@@ -17,7 +17,7 @@ describe UsersHelper do
     end
 
     context 'link_to_github' do
-      it { link_to_github(session[:current_user]).should == '<img alt="Images" src="/images/" width="16px" /><a href="https://github.com/test">test user</a>' }
+      it { link_to_github(session[:current_user]).should == '<img src="" width="16px" /><a href="https://github.com/test">test user</a>' }
     end
   end
 

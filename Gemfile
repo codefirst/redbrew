@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.1'
+gem 'rails', '3.2.11'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -14,6 +14,7 @@ gem 'ci_reporter'
 gem 'jquery-rails'
 gem 'kaminari'
 gem 'rails3_acts_as_paranoid', :git => 'git://github.com/comboy/rails3_acts_as_paranoid.git'
+gem 'therubyracer', '0.10.2', :platform => :ruby
 
 unless ENV['UNUSE_PG']
   gem 'pg'
@@ -25,7 +26,6 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'less-rails'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer'
 
   gem 'uglifier', '>= 1.0.3'
 end

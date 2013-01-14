@@ -1,4 +1,6 @@
 class Plugin < ActiveRecord::Base
+  attr_accessible :id, :name, :url, :description, :formula, :create_user_id, :update_user_id, :deleted_at, :plugins, :downloads
+
   validates :name, :uniqueness => true, :presence => true
 
   belongs_to :create_user, :class_name => 'User', :foreign_key => 'create_user_id'
